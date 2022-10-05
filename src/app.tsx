@@ -22,7 +22,7 @@ const App = () => {
                 method: "GET",
                 url: "",
                 body: "",
-                headers: new Map<string, string[]>(),
+                headers: [],
               })
             )
           }
