@@ -43,7 +43,7 @@ const RequestTabs = (props: RequestTabsProps) => {
       </Box>
 
       {props.requests.map((request, index) => (
-        <TabPanel value={selectedTab} index={index}>
+        <TabPanel value={selectedTab} index={index} key={index}>
           <RequestConfig index={index} request={request} />
         </TabPanel>
       ))}

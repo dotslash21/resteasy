@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import { createRoot } from "react-dom/client";
 import { store, RootState } from "./app/store";
 import { Provider, useSelector, useDispatch } from "react-redux";
-import { addRequest, removeRequest } from "./features/requests/requestsSlice";
+import { addRequest } from "./features/requests/requestsSlice";
 import Button from "@mui/material/Button";
 import RequestTabs from "./components/RequestTabs";
 
@@ -37,11 +37,12 @@ const App = () => {
 };
 
 function render() {
-  ReactDOM.render(
+  const container = document.getElementById("root");
+  const root = createRoot(container);
+  root.render(
     <Provider store={store}>
       <App />
-    </Provider>,
-    document.body
+    </Provider>
   );
 }
 
